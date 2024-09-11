@@ -35,5 +35,6 @@ public class GameUI : MonoBehaviour
     public void DecrementDisplayedKnifeCount()
     {
         panelKnives.transform.GetChild(KnifeIconIndexToChange).GetComponent<Image>().color = usedKnifeColor;
+        KnifeIconIndexToChange++;
     }
 }
