@@ -8,6 +8,7 @@ public class Knife : MonoBehaviour
     private bool isActive = true;
     private Rigidbody2D rb;
     private BoxCollider2D knifeCollider;
+    
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Knife : MonoBehaviour
         {
             rb.AddForce(throwForce, ForceMode2D.Impulse);
             rb.gravityScale = 1;
+            GameController.Instance.gameUI.DecrementDisplayedKnifeCount();
         }
     }
 
@@ -32,17 +34,22 @@ public class Knife : MonoBehaviour
 
         if(other.collider.CompareTag("Log"))
         {
+            GetComponent<ParticleSystem>().Play();
             rb.velocity = Vector2.zero;
             rb.bodyType = RigidbodyType2D.Kinematic;
             this.transform.SetParent(other.transform);
             
             knifeCollider.offset = new Vector2(knifeCollider.offset.x, -0.4f);
             knifeCollider.size = new Vector2(knifeCollider.size.x, 1.2f);
+
+            // Accessing GameController singleton directly
+            GameController.Instance.OnSuccessfulKnifeHit();
         }
         else
         if(other.collider.CompareTag("Knife"))
         {
             rb.velocity = new Vector2(rb.velocity.x, -2);
+            GameController.Instance.StartGameOverSequence(false);
         }
     }
 }

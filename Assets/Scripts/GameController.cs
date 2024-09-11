@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(GameUI))]
 public class GameController : MonoBehaviour
 {
-    public  GameController Instance { get; private set; }
+    public static GameController Instance { get; private set; }
 
     [SerializeField] private int knifeCount;
 
