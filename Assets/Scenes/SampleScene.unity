@@ -5933,10 +5933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a402f9d9d603574cb86adfbd5774084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartButton: {fileID: 0}
-  panelKnives: {fileID: 0}
-  iconKnife: {fileID: 0}
-  usedKnifeColor: {r: 0, g: 0, b: 0, a: 0}
+  restartButton: {fileID: 1893317862}
+  panelKnives: {fileID: 1594117866}
+  iconKnife: {fileID: 3377748657501171485, guid: 5323bd23e54ad014dabda75d0014377c, type: 3}
+  usedKnifeColor: {r: 1, g: 1, b: 1, a: 0.39215687}
 --- !u!1 &2125163731
 GameObject:
   m_ObjectHideFlags: 0
